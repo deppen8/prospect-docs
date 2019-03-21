@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>surveysim package &#8212; surveysim alpha documentation</title>
+    <title>SurveySim &#8212; surveysim alpha documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,7 +16,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to surveysim’s documentation!" href="index.html" />
+    <link rel="prev" title="SurveySim documentation" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -33,13 +33,10 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="surveysim-package">
-<h1>surveysim package<a class="headerlink" href="#surveysim-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
+  <div class="section" id="surveysim">
+<h1>SurveySim<a class="headerlink" href="#surveysim" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-surveysim.area">
-<span id="surveysim-area-module"></span><h2>surveysim.area module<a class="headerlink" href="#module-surveysim.area" title="Permalink to this headline">¶</a></h2>
+<span id="surveysim-area"></span><h2>surveysim.area<a class="headerlink" href="#module-surveysim.area" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="surveysim.area.Area">
 <em class="property">class </em><code class="descclassname">surveysim.area.</code><code class="descname">Area</code><span class="sig-paren">(</span><em>name</em>, <em>survey_name</em>, <em>shape</em>, <em>vis=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.area.Area" title="Permalink to this definition">¶</a></dt>
@@ -115,6 +112,20 @@
 </table>
 </dd></dl>
 
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Unique name for the area</li>
+<li><strong>survey_name</strong> (<em>str</em>) – Name of the associated <cite>Survey</cite></li>
+<li><strong>shape</strong> (<em>Polygon</em>) – Geographic specification</li>
+<li><strong>vis</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – Surface visibility (the default is 1.0, which means perfect surface visibility)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="attribute">
 <dt id="surveysim.area.Area.assemblages">
 <code class="descname">assemblages</code><a class="headerlink" href="#surveysim.area.Area.assemblages" title="Permalink to this definition">¶</a></dt>
@@ -250,7 +261,7 @@
 
 </div>
 <div class="section" id="module-surveysim.assemblage">
-<span id="surveysim-assemblage-module"></span><h2>surveysim.assemblage module<a class="headerlink" href="#module-surveysim.assemblage" title="Permalink to this headline">¶</a></h2>
+<span id="surveysim-assemblage"></span><h2>surveysim.assemblage<a class="headerlink" href="#module-surveysim.assemblage" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="surveysim.assemblage.Assemblage">
 <em class="property">class </em><code class="descclassname">surveysim.assemblage.</code><code class="descname">Assemblage</code><span class="sig-paren">(</span><em>name</em>, <em>survey_name</em>, <em>area_name</em>, <em>layer_list</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.assemblage.Assemblage" title="Permalink to this definition">¶</a></dt>
@@ -356,7 +367,7 @@
 
 </div>
 <div class="section" id="module-surveysim.coverage">
-<span id="surveysim-coverage-module"></span><h2>surveysim.coverage module<a class="headerlink" href="#module-surveysim.coverage" title="Permalink to this headline">¶</a></h2>
+<span id="surveysim-coverage"></span><h2>surveysim.coverage<a class="headerlink" href="#module-surveysim.coverage" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="surveysim.coverage.Coverage">
 <em class="property">class </em><code class="descclassname">surveysim.coverage.</code><code class="descname">Coverage</code><span class="sig-paren">(</span><em>name</em>, <em>area</em>, <em>survey_name</em>, <em>surveyunit_list</em>, <em>orientation</em>, <em>spacing</em>, <em>sweep_width=None</em>, <em>radius=None</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.coverage.Coverage" title="Permalink to this definition">¶</a></dt>
@@ -692,7 +703,7 @@
 
 </div>
 <div class="section" id="module-surveysim.feature">
-<span id="surveysim-feature-module"></span><h2>surveysim.feature module<a class="headerlink" href="#module-surveysim.feature" title="Permalink to this headline">¶</a></h2>
+<span id="surveysim-feature"></span><h2>surveysim.feature<a class="headerlink" href="#module-surveysim.feature" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="surveysim.feature.Feature">
 <em class="property">class </em><code class="descclassname">surveysim.feature.</code><code class="descname">Feature</code><span class="sig-paren">(</span><em>name</em>, <em>layer_name</em>, <em>shape</em>, <em>time_penalty=0.0</em>, <em>ideal_obs_rate=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.feature.Feature" title="Permalink to this definition">¶</a></dt>
@@ -829,7 +840,7 @@
 
 </div>
 <div class="section" id="module-surveysim.layer">
-<span id="surveysim-layer-module"></span><h2>surveysim.layer module<a class="headerlink" href="#module-surveysim.layer" title="Permalink to this headline">¶</a></h2>
+<span id="surveysim-layer"></span><h2>surveysim.layer<a class="headerlink" href="#module-surveysim.layer" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="surveysim.layer.Layer">
 <em class="property">class </em><code class="descclassname">surveysim.layer.</code><code class="descname">Layer</code><span class="sig-paren">(</span><em>name</em>, <em>area</em>, <em>assemblage_name</em>, <em>feature_list</em>, <em>time_penalty=0.0</em>, <em>ideal_obs_rate=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.layer.Layer" title="Permalink to this definition">¶</a></dt>
@@ -1297,7 +1308,7 @@
 
 </div>
 <div class="section" id="module-surveysim.simulation">
-<span id="surveysim-simulation-module"></span><h2>surveysim.simulation module<a class="headerlink" href="#module-surveysim.simulation" title="Permalink to this headline">¶</a></h2>
+<span id="surveysim-simulation"></span><h2>surveysim.simulation<a class="headerlink" href="#module-surveysim.simulation" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="surveysim.simulation.SimSession">
 <em class="property">class </em><code class="descclassname">surveysim.simulation.</code><code class="descname">SimSession</code><span class="sig-paren">(</span><em>engine_str='sqlite:///simulation_default.db'</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.simulation.SimSession" title="Permalink to this definition">¶</a></dt>
@@ -1350,7 +1361,7 @@
 
 </div>
 <div class="section" id="module-surveysim.survey">
-<span id="surveysim-survey-module"></span><h2>surveysim.survey module<a class="headerlink" href="#module-surveysim.survey" title="Permalink to this headline">¶</a></h2>
+<span id="surveysim-survey"></span><h2>surveysim.survey<a class="headerlink" href="#module-surveysim.survey" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="surveysim.survey.Survey">
 <em class="property">class </em><code class="descclassname">surveysim.survey.</code><code class="descname">Survey</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.survey.Survey" title="Permalink to this definition">¶</a></dt>
@@ -1411,7 +1422,7 @@
 
 </div>
 <div class="section" id="module-surveysim.surveyor">
-<span id="surveysim-surveyor-module"></span><h2>surveysim.surveyor module<a class="headerlink" href="#module-surveysim.surveyor" title="Permalink to this headline">¶</a></h2>
+<span id="surveysim-surveyor"></span><h2>surveysim.surveyor<a class="headerlink" href="#module-surveysim.surveyor" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="surveysim.surveyor.Surveyor">
 <em class="property">class </em><code class="descclassname">surveysim.surveyor.</code><code class="descname">Surveyor</code><span class="sig-paren">(</span><em>name</em>, <em>team_name</em>, <em>surveyor_type</em>, <em>skill=1.0</em>, <em>speed_penalty=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.surveyor.Surveyor" title="Permalink to this definition">¶</a></dt>
@@ -1542,7 +1553,7 @@
 
 </div>
 <div class="section" id="module-surveysim.surveyunit">
-<span id="surveysim-surveyunit-module"></span><h2>surveysim.surveyunit module<a class="headerlink" href="#module-surveysim.surveyunit" title="Permalink to this headline">¶</a></h2>
+<span id="surveysim-surveyunit"></span><h2>surveysim.surveyunit<a class="headerlink" href="#module-surveysim.surveyunit" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="surveysim.surveyunit.SurveyUnit">
 <em class="property">class </em><code class="descclassname">surveysim.surveyunit.</code><code class="descname">SurveyUnit</code><span class="sig-paren">(</span><em>name</em>, <em>coverage_name</em>, <em>shape</em>, <em>surveyunit_type</em>, <em>length=None</em>, <em>radius=None</em>, <em>min_time_per_unit=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.surveyunit.SurveyUnit" title="Permalink to this definition">¶</a></dt>
@@ -1723,7 +1734,7 @@
 
 </div>
 <div class="section" id="module-surveysim.team">
-<span id="surveysim-team-module"></span><h2>surveysim.team module<a class="headerlink" href="#module-surveysim.team" title="Permalink to this headline">¶</a></h2>
+<span id="surveysim-team"></span><h2>surveysim.team<a class="headerlink" href="#module-surveysim.team" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="surveysim.team.Team">
 <em class="property">class </em><code class="descclassname">surveysim.team.</code><code class="descname">Team</code><span class="sig-paren">(</span><em>name</em>, <em>survey_name</em>, <em>surveyor_list</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.team.Team" title="Permalink to this definition">¶</a></dt>
@@ -1819,7 +1830,7 @@
 
 </div>
 <div class="section" id="module-surveysim.utils">
-<span id="surveysim-utils-module"></span><h2>surveysim.utils module<a class="headerlink" href="#module-surveysim.utils" title="Permalink to this headline">¶</a></h2>
+<span id="surveysim-utils"></span><h2>surveysim.utils<a class="headerlink" href="#module-surveysim.utils" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="surveysim.utils.clip_lines_polys">
 <code class="descclassname">surveysim.utils.</code><code class="descname">clip_lines_polys</code><span class="sig-paren">(</span><em>lines_polys: geopandas.geodataframe.GeoDataFrame</em>, <em>by: geopandas.geodataframe.GeoDataFrame</em><span class="sig-paren">)</span> &#x2192; geopandas.geodataframe.GeoDataFrame<a class="headerlink" href="#surveysim.utils.clip_lines_polys" title="Permalink to this definition">¶</a></dt>
@@ -1917,9 +1928,6 @@
 </dd></dl>
 
 </div>
-<div class="section" id="module-surveysim">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-surveysim" title="Permalink to this headline">¶</a></h2>
-</div>
 </div>
 
 
@@ -1941,20 +1949,18 @@
 <h3>Navigation</h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">surveysim package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.area">surveysim.area module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.assemblage">surveysim.assemblage module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.coverage">surveysim.coverage module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.feature">surveysim.feature module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.layer">surveysim.layer module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.simulation">surveysim.simulation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.survey">surveysim.survey module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.surveyor">surveysim.surveyor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.surveyunit">surveysim.surveyunit module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.team">surveysim.team module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.utils">surveysim.utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim">Module contents</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SurveySim</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.area">surveysim.area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.assemblage">surveysim.assemblage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.coverage">surveysim.coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.feature">surveysim.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.layer">surveysim.layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.simulation">surveysim.simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.survey">surveysim.survey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.surveyor">surveysim.surveyor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.surveyunit">surveysim.surveyunit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.team">surveysim.team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.utils">surveysim.utils</a></li>
 </ul>
 </li>
 </ul>
@@ -1963,7 +1969,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Welcome to surveysim’s documentation!</a></li>
+      <li>Previous: <a href="index.html" title="previous chapter">SurveySim documentation</a></li>
   </ul></li>
 </ul>
 </div>
