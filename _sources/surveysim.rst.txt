@@ -1,5 +1,19 @@
-SurveySim
-=========
+Modules
+=======
+
+surveysim.simulation
+---------------------------
+
+.. automodule:: surveysim.simulation
+    :members:
+    :show-inheritance:
+
+surveysim.survey
+-----------------------
+
+.. automodule:: surveysim.survey
+    :members:
+    :show-inheritance:
 
 surveysim.area
 ---------------------
@@ -13,23 +27,6 @@ surveysim.assemblage
 
 .. automodule:: surveysim.assemblage
     :members:
-    :undoc-members:
-    :show-inheritance:
-
-surveysim.coverage
--------------------------
-
-.. automodule:: surveysim.coverage
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-surveysim.feature
-------------------------
-
-.. automodule:: surveysim.feature
-    :members:
-    :undoc-members:
     :show-inheritance:
 
 surveysim.layer
@@ -37,31 +34,20 @@ surveysim.layer
 
 .. automodule:: surveysim.layer
     :members:
-    :undoc-members:
     :show-inheritance:
 
-surveysim.simulation
----------------------------
+surveysim.feature
+------------------------
 
-.. automodule:: surveysim.simulation
+.. automodule:: surveysim.feature
     :members:
-    :undoc-members:
     :show-inheritance:
 
-surveysim.survey
------------------------
-
-.. automodule:: surveysim.survey
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-surveysim.surveyor
+surveysim.coverage
 -------------------------
 
-.. automodule:: surveysim.surveyor
+.. automodule:: surveysim.coverage
     :members:
-    :undoc-members:
     :show-inheritance:
 
 surveysim.surveyunit
@@ -69,15 +55,21 @@ surveysim.surveyunit
 
 .. automodule:: surveysim.surveyunit
     :members:
-    :undoc-members:
     :show-inheritance:
+
 
 surveysim.team
 ---------------------
 
 .. automodule:: surveysim.team
     :members:
-    :undoc-members:
+    :show-inheritance:
+
+surveysim.surveyor
+-------------------------
+
+.. automodule:: surveysim.surveyor
+    :members:
     :show-inheritance:
 
 surveysim.utils
@@ -85,5 +77,4 @@ surveysim.utils
 
 .. automodule:: surveysim.utils
     :members:
-    :undoc-members:
     :show-inheritance:

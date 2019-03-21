@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SurveySim &mdash; surveysim alpha documentation</title>
+  <title>Modules &mdash; surveysim alpha documentation</title>
   
 
   
@@ -85,17 +85,17 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">SurveySim</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.area">surveysim.area</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.assemblage">surveysim.assemblage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.coverage">surveysim.coverage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.feature">surveysim.feature</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.layer">surveysim.layer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-surveysim.simulation">surveysim.simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-surveysim.survey">surveysim.survey</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.surveyor">surveysim.surveyor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.area">surveysim.area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.assemblage">surveysim.assemblage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.layer">surveysim.layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.feature">surveysim.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.coverage">surveysim.coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-surveysim.surveyunit">surveysim.surveyunit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-surveysim.team">surveysim.team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-surveysim.surveyor">surveysim.surveyor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-surveysim.utils">surveysim.utils</a></li>
 </ul>
 </li>
@@ -144,7 +144,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>SurveySim</li>
+      <li>Modules</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -163,8 +163,105 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="surveysim">
-<h1>SurveySim<a class="headerlink" href="#surveysim" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="modules">
+<h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-surveysim.simulation">
+<span id="surveysim-simulation"></span><h2>surveysim.simulation<a class="headerlink" href="#module-surveysim.simulation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surveysim.simulation.SimSession">
+<em class="property">class </em><code class="descclassname">surveysim.simulation.</code><code class="descname">SimSession</code><span class="sig-paren">(</span><em>engine_str='sqlite:///simulation_default.db'</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.simulation.SimSession" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object to handle setup/teardown as well as transactions for a SQLAlchemy <cite>Session</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>engine_str</strong> (<em>str</em><em>, </em><em>optional</em>) – Database URL (the default is “sqlite:///simulation_default.db”)</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The SQLAlchemy docs have some good examples of different types of database URLs. <a class="reference external" href="https://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls">https://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls</a></p>
+<dl class="attribute">
+<dt id="surveysim.simulation.SimSession.engine">
+<code class="descname">engine</code><a class="headerlink" href="#surveysim.simulation.SimSession.engine" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">sqlalchemy Engine</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="surveysim.simulation.SimSession.session">
+<code class="descname">session</code><a class="headerlink" href="#surveysim.simulation.SimSession.session" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">sqlalchemy Session</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="surveysim.simulation.SimSession.stage">
+<code class="descname">stage</code><span class="sig-paren">(</span><em>block</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.simulation.SimSession.stage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a building block to the list of objects to save to the database</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="surveysim.simulation.SimSession.unstage">
+<code class="descname">unstage</code><span class="sig-paren">(</span><em>block</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.simulation.SimSession.unstage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a building block</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-surveysim.survey">
+<span id="surveysim-survey"></span><h2>surveysim.survey<a class="headerlink" href="#module-surveysim.survey" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surveysim.survey.Survey">
+<em class="property">class </em><code class="descclassname">surveysim.survey.</code><code class="descname">Survey</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.survey.Survey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
+<p>Unique index for a set of <cite>Area</cite>, <cite>Assemblage</cite>, <cite>Coverage</cite>, and <cite>Team</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – Unique name for the survey</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="surveysim.survey.Survey.name">
+<code class="descname">name</code><a class="headerlink" href="#surveysim.survey.Survey.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the survey</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="surveysim.survey.Survey.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>area=None</em>, <em>assemblage=None</em>, <em>layers=None</em>, <em>features=None</em>, <em>coverage=None</em>, <em>surveyunits=None</em>, <em>team=None</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.survey.Survey.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to create plot matrix for all building blocks</p>
+<p>Useful for quick inspections of the survey elements</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="module-surveysim.area">
 <span id="surveysim-area"></span><h2>surveysim.area<a class="headerlink" href="#module-surveysim.area" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -172,6 +269,20 @@
 <em class="property">class </em><code class="descclassname">surveysim.area.</code><code class="descname">Area</code><span class="sig-paren">(</span><em>name</em>, <em>survey_name</em>, <em>shape</em>, <em>vis=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.area.Area" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
 <p>Spatial extent of the survey</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Unique name for the area</li>
+<li><strong>survey_name</strong> (<em>str</em>) – Name of the associated <cite>Survey</cite></li>
+<li><strong>shape</strong> (<em>Polygon</em>) – Geographic specification</li>
+<li><strong>vis</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – Surface visibility (the default is 1.0, which means perfect surface visibility)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="attribute">
 <dt id="surveysim.area.Area.name">
 <code class="descname">name</code><a class="headerlink" href="#surveysim.area.Area.name" title="Permalink to this definition">¶</a></dt>
@@ -242,20 +353,6 @@
 </table>
 </dd></dl>
 
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<em>str</em>) – Unique name for the area</li>
-<li><strong>survey_name</strong> (<em>str</em>) – Name of the associated <cite>Survey</cite></li>
-<li><strong>shape</strong> (<em>Polygon</em>) – Geographic specification</li>
-<li><strong>vis</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – Surface visibility (the default is 1.0, which means perfect surface visibility)</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 <dl class="classmethod">
 <dt id="surveysim.area.Area.from_area_value">
 <em class="property">classmethod </em><code class="descname">from_area_value</code><span class="sig-paren">(</span><em>name: str</em>, <em>survey_name: str</em>, <em>value: float</em>, <em>origin: Tuple[float</em>, <em>float] = (0.0</em>, <em>0.0)</em>, <em>vis: Union[float</em>, <em>scipy.stats._distn_infrastructure.rv_frozen] = 1.0</em><span class="sig-paren">)</span> &#x2192; surveysim.area.Area<a class="headerlink" href="#surveysim.area.Area.from_area_value" title="Permalink to this definition">¶</a></dt>
@@ -347,6 +444,20 @@
 <em class="property">class </em><code class="descclassname">surveysim.assemblage.</code><code class="descname">Assemblage</code><span class="sig-paren">(</span><em>name</em>, <em>survey_name</em>, <em>area_name</em>, <em>layer_list</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.assemblage.Assemblage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
 <p>A collection of all <cite>Layer</cite> objects for a survey</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Unique name for the assemblage</li>
+<li><strong>survey_name</strong> (<em>str</em>) – Name of the survey</li>
+<li><strong>area_name</strong> (<em>str</em>) – Name of the containing area</li>
+<li><strong>layer_list</strong> (<em>list of Layer</em>) – List of layers that make up the assemblage</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="attribute">
 <dt id="surveysim.assemblage.Assemblage.name">
 <code class="descname">name</code><a class="headerlink" href="#surveysim.assemblage.Assemblage.name" title="Permalink to this definition">¶</a></dt>
@@ -403,519 +514,6 @@
 </table>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="surveysim.assemblage.Assemblage.area">
-<code class="descname">area</code><a class="headerlink" href="#surveysim.assemblage.Assemblage.area" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">area_name</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">df</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.assemblage.Assemblage.id">
-<code class="descname">id</code><a class="headerlink" href="#surveysim.assemblage.Assemblage.id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.assemblage.Assemblage.layers">
-<code class="descname">layers</code><a class="headerlink" href="#surveysim.assemblage.Assemblage.layers" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">name</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.assemblage.Assemblage.survey">
-<code class="descname">survey</code><a class="headerlink" href="#surveysim.assemblage.Assemblage.survey" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">survey_name</code></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-surveysim.coverage">
-<span id="surveysim-coverage"></span><h2>surveysim.coverage<a class="headerlink" href="#module-surveysim.coverage" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="surveysim.coverage.Coverage">
-<em class="property">class </em><code class="descclassname">surveysim.coverage.</code><code class="descname">Coverage</code><span class="sig-paren">(</span><em>name</em>, <em>area</em>, <em>survey_name</em>, <em>surveyunit_list</em>, <em>orientation</em>, <em>spacing</em>, <em>sweep_width=None</em>, <em>radius=None</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.coverage.Coverage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
-<p>A collection of <cite>SurveyUnit</cite> objects</p>
-<p>The <cite>Coverage</cite> class is mostly useful as a way to create groups of similar survey units.</p>
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.name">
-<code class="descname">name</code><a class="headerlink" href="#surveysim.coverage.Coverage.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Unique name for the coverage</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.survey_name">
-<code class="descname">survey_name</code><a class="headerlink" href="#surveysim.coverage.Coverage.survey_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Name of the survey</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.area_name">
-<code class="descname">area_name</code><a class="headerlink" href="#surveysim.coverage.Coverage.area_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Name of the containing area</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.surveyunit_list">
-<code class="descname">surveyunit_list</code><a class="headerlink" href="#surveysim.coverage.Coverage.surveyunit_list" title="Permalink to this definition">¶</a></dt>
-<dd><p>List of survey units that make up the coverage</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">List[<a class="reference internal" href="#surveysim.surveyunit.SurveyUnit" title="surveysim.surveyunit.SurveyUnit">SurveyUnit</a>]</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.orientation">
-<code class="descname">orientation</code><a class="headerlink" href="#surveysim.coverage.Coverage.orientation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Angle of the predominant axis of the survey units</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.spacing">
-<code class="descname">spacing</code><a class="headerlink" href="#surveysim.coverage.Coverage.spacing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Distance between survey units</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.sweep_width">
-<code class="descname">sweep_width</code><a class="headerlink" href="#surveysim.coverage.Coverage.sweep_width" title="Permalink to this definition">¶</a></dt>
-<dd><p>Buffer distance around transects</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.radius">
-<code class="descname">radius</code><a class="headerlink" href="#surveysim.coverage.Coverage.radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>Buffer distance for radial survey units</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.df">
-<code class="descname">df</code><a class="headerlink" href="#surveysim.coverage.Coverage.df" title="Permalink to this definition">¶</a></dt>
-<dd><p><cite>GeoDataFrame</cite> with a row for each survey unit</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">geopandas GeoDataFrame</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.area">
-<code class="descname">area</code><a class="headerlink" href="#surveysim.coverage.Coverage.area" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">area_name</code></dt>
-<dd></dd></dl>
-
-<dl class="classmethod">
-<dt id="surveysim.coverage.Coverage.from_GeoDataFrame">
-<em class="property">classmethod </em><code class="descname">from_GeoDataFrame</code><span class="sig-paren">(</span><em>gdf: geopandas.geodataframe.GeoDataFrame</em>, <em>name: str</em>, <em>area: surveysim.area.Area</em>, <em>survey_name: str</em>, <em>surveyunit_type: str</em>, <em>spacing: float</em>, <em>orient_axis: str = 'long'</em>, <em>min_time_per_unit: Union[float</em>, <em>scipy.stats._distn_infrastructure.rv_frozen] = 0.0</em><span class="sig-paren">)</span> &#x2192; surveysim.coverage.Coverage<a class="headerlink" href="#surveysim.coverage.Coverage.from_GeoDataFrame" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a <cite>Coverage</cite> instance from a geopandas <cite>GeoDataFrame</cite></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>gdf</strong> (<em>geopandas GeoDataFrame</em>) – <cite>GeoDataFrame</cite> where each row is a survey unit</li>
-<li><strong>name</strong> (<em>str</em>) – Unique name for the Coverage</li>
-<li><strong>area</strong> (<a class="reference internal" href="#surveysim.area.Area" title="surveysim.area.Area"><em>Area</em></a>) – Containing area</li>
-<li><strong>survey_name</strong> (<em>str</em>) – Name of the survey</li>
-<li><strong>surveyunit_type</strong> (<em>{'transect'</em><em>, </em><em>'radial'}</em>) – Type of units to create</li>
-<li><strong>spacing</strong> (<em>float</em>) – Distance between survey units</li>
-<li><strong>orient_axis</strong> (<em>{'long'</em><em>, </em><em>'short'}</em><em>, </em><em>optional</em>) – Axis of the area along which to orient the survey units (the default is ‘long’, which creates rows parallel to the longest axis of the area’s minimum rotated rectangle)</li>
-<li><strong>min_time_per_unit</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – <p>Minimum amount of time required to complete one “unit” of survey, given no surveyor speed penalty and no time penalty for recording features. The default is 0.0.</p>
-<p>Because transects can differ in length, transect coverages should specify this term as time per one unit of distance (e.g., seconds per meter).</p>
-<p>For radial survey units, this term should be specified more simply as time per one survey unit.</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#surveysim.coverage.Coverage" title="surveysim.coverage.Coverage">Coverage</a></p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="classmethod">
-<dt id="surveysim.coverage.Coverage.from_radials">
-<em class="property">classmethod </em><code class="descname">from_radials</code><span class="sig-paren">(</span><em>name: str</em>, <em>area: surveysim.area.Area</em>, <em>survey_name: str</em>, <em>spacing: float = 10.0</em>, <em>radius: float = 1.78</em>, <em>orientation: float = 0.0</em>, <em>optimize_orient_by: str = None</em>, <em>orient_increment: float = 5.0</em>, <em>orient_axis: str = 'long'</em>, <em>min_time_per_unit: Union[float</em>, <em>scipy.stats._distn_infrastructure.rv_frozen] = 0.0</em><span class="sig-paren">)</span> &#x2192; surveysim.coverage.Coverage<a class="headerlink" href="#surveysim.coverage.Coverage.from_radials" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a <cite>Coverage</cite> instance of radial units.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – Unique name for the Coverage</li>
-<li><strong>area</strong> (<a class="reference internal" href="#surveysim.area.Area" title="surveysim.area.Area"><em>Area</em></a>) – Containing area</li>
-<li><strong>survey_name</strong> (<em>str</em>) – Name of the survey</li>
-<li><strong>spacing</strong> (<em>float</em><em>, </em><em>optional</em>) – Distance between survey units (the default is 10.0)</li>
-<li><strong>radius</strong> (<em>float</em><em>, </em><em>optional</em>) – Buffer distance for radial survey units (the default is 1.78, which leads to radial units of roughly 10 square units of area)</li>
-<li><strong>orientation</strong> (<em>float</em><em>, </em><em>optional</em>) – Angle of the predominant axis of the survey units (the default is 0.0)</li>
-<li><strong>optimize_orient_by</strong> (<em>{'area_coverage'</em><em>, </em><em>'area_orient'}</em><em>, </em><em>optional</em>) – Metric to optimize in determining the orientation of survey units. ‘area_coverage’ chooses the orientation that maximizes the area covered by the survey units. ‘area_orient’ chooses the orientation that best parallels the <cite>orient_axis</cite> of the area. The default is None, in which case the <cite>orientation</cite> parameter is used directly.</li>
-<li><strong>orient_increment</strong> (<em>float</em><em>, </em><em>optional</em>) – Step size (in degrees) to use when testing different orientations. (the default is 5.0)</li>
-<li><strong>orient_axis</strong> (<em>{'long'</em><em>, </em><em>'short'}</em><em>, </em><em>optional</em>) – Axis of the area along which to orient the survey units (the default is ‘long’, which creates rows parallel to the longest axis of the area’s minimum rotated rectangle)</li>
-<li><strong>min_time_per_unit</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em>) – <p>Minimum amount of time required to complete one “unit” of survey, given no surveyor speed penalty and no time penalty for recording features. The default is 0.0.</p>
-<p>For radial survey units, this term should be specified more simply as time per one survey unit.</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#surveysim.coverage.Coverage" title="surveysim.coverage.Coverage">Coverage</a></p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="classmethod">
-<dt id="surveysim.coverage.Coverage.from_shapefile">
-<em class="property">classmethod </em><code class="descname">from_shapefile</code><span class="sig-paren">(</span><em>path: str</em>, <em>name: str</em>, <em>area: surveysim.area.Area</em>, <em>survey_name: str</em>, <em>surveyunit_type: str</em>, <em>spacing: float</em>, <em>orient_axis: str = 'long'</em>, <em>min_time_per_unit: Union[float</em>, <em>scipy.stats._distn_infrastructure.rv_frozen] = 0.0</em><span class="sig-paren">)</span> &#x2192; surveysim.coverage.Coverage<a class="headerlink" href="#surveysim.coverage.Coverage.from_shapefile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a <cite>Coverage</cite> instance from a shapefile.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>path</strong> (<em>str</em>) – Filepath to the shapefile</li>
-<li><strong>name</strong> (<em>str</em>) – Unique name for the Coverage</li>
-<li><strong>area</strong> (<a class="reference internal" href="#surveysim.area.Area" title="surveysim.area.Area"><em>Area</em></a>) – Containing area</li>
-<li><strong>survey_name</strong> (<em>str</em>) – Name of the survey</li>
-<li><strong>surveyunit_type</strong> (<em>{'transect'</em><em>, </em><em>'radial'}</em>) – Type of units to create</li>
-<li><strong>spacing</strong> (<em>float</em>) – Distance between survey units</li>
-<li><strong>orient_axis</strong> (<em>{'long'</em><em>, </em><em>'short'}</em><em>, </em><em>optional</em>) – Axis of the area along which to orient the survey units (the default is ‘long’, which creates rows parallel to the longest axis of the area’s minimum rotated rectangle)</li>
-<li><strong>min_time_per_unit</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – <p>Minimum amount of time required to complete one “unit” of survey, given no surveyor speed penalty and no time penalty for recording features. The default is 0.0.</p>
-<p>Because transects can differ in length, transect coverages should specify this term as time per one unit of distance (e.g., seconds per meter).</p>
-<p>For radial survey units, this term should be specified more simply as time per one survey unit.</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#surveysim.coverage.Coverage" title="surveysim.coverage.Coverage">Coverage</a></p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="classmethod">
-<dt id="surveysim.coverage.Coverage.from_transects">
-<em class="property">classmethod </em><code class="descname">from_transects</code><span class="sig-paren">(</span><em>name: str</em>, <em>area: surveysim.area.Area</em>, <em>survey_name: str</em>, <em>spacing: float = 10.0</em>, <em>sweep_width: float = 2.0</em>, <em>orientation: float = 0.0</em>, <em>optimize_orient_by: str = None</em>, <em>orient_increment: float = 5.0</em>, <em>orient_axis: str = 'long'</em>, <em>min_time_per_unit: Union[float</em>, <em>scipy.stats._distn_infrastructure.rv_frozen] = 0.0</em><span class="sig-paren">)</span> &#x2192; surveysim.coverage.Coverage<a class="headerlink" href="#surveysim.coverage.Coverage.from_transects" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a <cite>Coverage</cite> instance of transects.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) – Unique name for the Coverage</li>
-<li><strong>area</strong> (<a class="reference internal" href="#surveysim.area.Area" title="surveysim.area.Area"><em>Area</em></a>) – Containing area</li>
-<li><strong>survey_name</strong> (<em>str</em>) – Name of the survey</li>
-<li><strong>spacing</strong> (<em>float</em><em>, </em><em>optional</em>) – Distance between survey units (the default is 10.0)</li>
-<li><strong>sweep_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Buffer distance around transects (the default is 2.0)</li>
-<li><strong>orientation</strong> (<em>float</em><em>, </em><em>optional</em>) – Angle of the predominant axis of the survey units (the default is 0.0)</li>
-<li><strong>optimize_orient_by</strong> (<em>{'area_coverage'</em><em>, </em><em>'area_orient'}</em><em>, </em><em>optional</em>) – Metric to optimize in determining the orientation of survey units. ‘area_coverage’ chooses the orientation that maximizes the area covered by the survey units. ‘area_orient’ chooses the orientation that best parallels the <cite>orient_axis</cite> of the area. The default is None, in which case the <cite>orientation</cite> parameter is used directly.</li>
-<li><strong>orient_increment</strong> (<em>float</em><em>, </em><em>optional</em>) – Step size (in degrees) to use when testing different orientations. (the default is 5.0)</li>
-<li><strong>orient_axis</strong> (<em>{'long'</em><em>, </em><em>'short'}</em><em>, </em><em>optional</em>) – Axis of the area along which to orient the survey units (the default is ‘long’, which creates rows parallel to the longest axis of the area’s minimum rotated rectangle)</li>
-<li><strong>min_time_per_unit</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em>) – <p>Minimum amount of time required to complete one “unit” of survey, given no surveyor speed penalty and no time penalty for recording features. The default is 0.0.</p>
-<p>Because transects can differ in length, transect coverages should specify this term as time per one unit of distance (e.g., seconds per meter).</p>
-</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#surveysim.coverage.Coverage" title="surveysim.coverage.Coverage">Coverage</a></p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.id">
-<code class="descname">id</code><a class="headerlink" href="#surveysim.coverage.Coverage.id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">name</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">orientation</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">radius</code></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="surveysim.coverage.Coverage.set_min_time_truncnorm_dist">
-<code class="descname">set_min_time_truncnorm_dist</code><span class="sig-paren">(</span><em>mean: float</em>, <em>sd: float</em>, <em>lower: float</em>, <em>upper: float</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.coverage.Coverage.set_min_time_truncnorm_dist" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">spacing</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.survey">
-<code class="descname">survey</code><a class="headerlink" href="#surveysim.coverage.Coverage.survey" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">survey_name</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.coverage.Coverage.surveyunit">
-<code class="descname">surveyunit</code><a class="headerlink" href="#surveysim.coverage.Coverage.surveyunit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">surveyunit_list</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">sweep_width</code></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-surveysim.feature">
-<span id="surveysim-feature"></span><h2>surveysim.feature<a class="headerlink" href="#module-surveysim.feature" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="surveysim.feature.Feature">
-<em class="property">class </em><code class="descclassname">surveysim.feature.</code><code class="descname">Feature</code><span class="sig-paren">(</span><em>name</em>, <em>layer_name</em>, <em>shape</em>, <em>time_penalty=0.0</em>, <em>ideal_obs_rate=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.feature.Feature" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
-<p>Represents an observable thing like an artifact or landscape feature.</p>
-<p>This class is not normally used directly. It is usually more efficient to use the constructor methods of the <cite>Layer</cite> class to create many <cite>Feature</cite> objects at once.</p>
-<dl class="attribute">
-<dt id="surveysim.feature.Feature.name">
-<code class="descname">name</code><a class="headerlink" href="#surveysim.feature.Feature.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Unique name for the feature</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.feature.Feature.layer_name">
-<code class="descname">layer_name</code><a class="headerlink" href="#surveysim.feature.Feature.layer_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Name of parent layer</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.feature.Feature.shape">
-<code class="descname">shape</code><a class="headerlink" href="#surveysim.feature.Feature.shape" title="Permalink to this definition">¶</a></dt>
-<dd><p>Geographic specification</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">Union[Point, LineString, Polygon]</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.feature.Feature.time_penalty">
-<code class="descname">time_penalty</code><a class="headerlink" href="#surveysim.feature.Feature.time_penalty" title="Permalink to this definition">¶</a></dt>
-<dd><p>Minimum amount of time it takes to record a feature</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">Union[float, rv_frozen]</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.feature.Feature.ideal_obs_rate">
-<code class="descname">ideal_obs_rate</code><a class="headerlink" href="#surveysim.feature.Feature.ideal_obs_rate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ideal observation rate: the frequency with which an artifact or feature will be recorded, assuming the following ideal conditions:</p>
-<ul class="simple">
-<li>It lies inside or intersects the Coverage</li>
-<li>Surface visibility is 100%</li>
-<li>The surveyor is highly skilled</li>
-</ul>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">Union[float, rv_frozen]</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.feature.Feature.id">
-<code class="descname">id</code><a class="headerlink" href="#surveysim.feature.Feature.id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">ideal_obs_rate</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.feature.Feature.layer">
-<code class="descname">layer</code><a class="headerlink" href="#surveysim.feature.Feature.layer" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">layer_name</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">name</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">shape</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">time_penalty</code></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="surveysim.feature.Feature.to_dict">
-<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#surveysim.feature.Feature.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create dictionary from attributes to allow easy DataFrame creation by <cite>Layer</cite>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary containing pairs of class attributes and their values</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 </dd></dl>
 
 </div>
@@ -927,6 +525,29 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
 <p>A container for <cite>Feature</cite> objects</p>
 <p>The <cite>Layer</cite> class is mostly useful as a way to create groups of similar features.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Unique name for the layer</li>
+<li><strong>area</strong> (<a class="reference internal" href="#surveysim.area.Area" title="surveysim.area.Area"><em>Area</em></a>) – Containing area</li>
+<li><strong>assemblage_name</strong> (<em>str</em>) – Name of the parent assemblage</li>
+<li><strong>feature_list</strong> (<em>List</em><em>[</em><a class="reference internal" href="#surveysim.feature.Feature" title="surveysim.feature.Feature"><em>Feature</em></a><em>]</em>) – List of features that make up the layer</li>
+<li><strong>time_penalty</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – Minimum amount of time it takes to record a feature (the default is 0.0, which indicates no time cost for feature recording)</li>
+<li><strong>ideal_obs_rate</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – <p>Ideal observation rate: the frequency with which an artifact or feature will be recorded, assuming the following ideal conditions:</p>
+<ul>
+<li>It lies inside or intersects the Coverage</li>
+<li>Surface visibility is 100%</li>
+<li>The surveyor is highly skilled</li>
+</ul>
+<p>The default is 1.0, which indicates that when visibility and surveyor skill allow, the feature will always be recorded.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="attribute">
 <dt id="surveysim.layer.Layer.name">
 <code class="descname">name</code><a class="headerlink" href="#surveysim.layer.Layer.name" title="Permalink to this definition">¶</a></dt>
@@ -996,41 +617,6 @@
 </tbody>
 </table>
 </dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.layer.Layer.area">
-<code class="descname">area</code><a class="headerlink" href="#surveysim.layer.Layer.area" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">area_name</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.layer.Layer.assemblage">
-<code class="descname">assemblage</code><a class="headerlink" href="#surveysim.layer.Layer.assemblage" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">assemblage_name</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">df</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">feature_list</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.layer.Layer.features">
-<code class="descname">features</code><a class="headerlink" href="#surveysim.layer.Layer.features" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="classmethod">
 <dt id="surveysim.layer.Layer.from_matern_points">
@@ -1186,11 +772,6 @@
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="surveysim.layer.Layer.from_rectangles">
-<em class="property">classmethod </em><code class="descname">from_rectangles</code><span class="sig-paren">(</span><em>area: surveysim.area.Area</em>, <em>n: int</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.layer.Layer.from_rectangles" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="classmethod">
 <dt id="surveysim.layer.Layer.from_shapefile">
 <em class="property">classmethod </em><code class="descname">from_shapefile</code><span class="sig-paren">(</span><em>path: str</em>, <em>name: str</em>, <em>area: surveysim.area.Area</em>, <em>assemblage_name: str</em>, <em>time_penalty: Union[float</em>, <em>scipy.stats._distn_infrastructure.rv_frozen] = 0.0</em>, <em>ideal_obs_rate: Union[float</em>, <em>scipy.stats._distn_infrastructure.rv_frozen] = 1.0</em><span class="sig-paren">)</span> &#x2192; surveysim.layer.Layer<a class="headerlink" href="#surveysim.layer.Layer.from_shapefile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <cite>Layer</cite> instance from a shapefile.</p>
@@ -1281,16 +862,6 @@
 </ol>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="surveysim.layer.Layer.id">
-<code class="descname">id</code><a class="headerlink" href="#surveysim.layer.Layer.id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">name</code></dt>
-<dd></dd></dl>
-
 <dl class="staticmethod">
 <dt id="surveysim.layer.Layer.poisson_points">
 <em class="property">static </em><code class="descname">poisson_points</code><span class="sig-paren">(</span><em>area: surveysim.area.Area</em>, <em>rate: float</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#surveysim.layer.Layer.poisson_points" title="Permalink to this definition">¶</a></dt>
@@ -1345,21 +916,6 @@
 </table>
 </dd></dl>
 
-<dl class="method">
-<dt id="surveysim.layer.Layer.set_ideal_obs_rate_scalar">
-<code class="descname">set_ideal_obs_rate_scalar</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.layer.Layer.set_ideal_obs_rate_scalar" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="surveysim.layer.Layer.set_time_penalty_scalar">
-<code class="descname">set_time_penalty_scalar</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.layer.Layer.set_time_penalty_scalar" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="surveysim.layer.Layer.set_time_penalty_truncnorm_dist">
-<code class="descname">set_time_penalty_truncnorm_dist</code><span class="sig-paren">(</span><em>mean: float</em>, <em>sd: float</em>, <em>lower: float</em>, <em>upper: float</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.layer.Layer.set_time_penalty_truncnorm_dist" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="staticmethod">
 <dt id="surveysim.layer.Layer.uniform_disk">
 <em class="property">static </em><code class="descname">uniform_disk</code><span class="sig-paren">(</span><em>x: float</em>, <em>y: float</em>, <em>r: float</em><span class="sig-paren">)</span> &#x2192; Tuple[float, float]<a class="headerlink" href="#surveysim.layer.Layer.uniform_disk" title="Permalink to this definition">¶</a></dt>
@@ -1387,69 +943,173 @@
 </dd></dl>
 
 </div>
-<div class="section" id="module-surveysim.simulation">
-<span id="surveysim-simulation"></span><h2>surveysim.simulation<a class="headerlink" href="#module-surveysim.simulation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-surveysim.feature">
+<span id="surveysim-feature"></span><h2>surveysim.feature<a class="headerlink" href="#module-surveysim.feature" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="surveysim.simulation.SimSession">
-<em class="property">class </em><code class="descclassname">surveysim.simulation.</code><code class="descname">SimSession</code><span class="sig-paren">(</span><em>engine_str='sqlite:///simulation_default.db'</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.simulation.SimSession" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Object to handle setup/teardown as well as transactions for a SQLAlchemy <cite>Session</cite></p>
-<dl class="attribute">
-<dt id="surveysim.simulation.SimSession.engine">
-<code class="descname">engine</code><a class="headerlink" href="#surveysim.simulation.SimSession.engine" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dt id="surveysim.feature.Feature">
+<em class="property">class </em><code class="descclassname">surveysim.feature.</code><code class="descname">Feature</code><span class="sig-paren">(</span><em>name</em>, <em>layer_name</em>, <em>shape</em>, <em>time_penalty=0.0</em>, <em>ideal_obs_rate=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.feature.Feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
+<p>Represents an observable thing like an artifact or landscape feature.</p>
+<p>This class is not normally used directly. It is usually more efficient to use the constructor methods of the <cite>Layer</cite> class to create many <cite>Feature</cite> objects at once.</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">sqlalchemy Engine</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Unique name for the feature</li>
+<li><strong>layer_name</strong> (<em>str</em>) – Name of the parent layer</li>
+<li><strong>shape</strong> (<em>Union</em><em>[</em><em>Point</em><em>, </em><em>LineString</em><em>, </em><em>Polygon</em><em>]</em>) – Geographic specification</li>
+<li><strong>time_penalty</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – Minimum amount of time it takes to record a feature (the default is 0.0, which indicates no time cost for feature recording)</li>
+<li><strong>ideal_obs_rate</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – <p>Ideal observation rate: the frequency with which an artifact or feature will be recorded, assuming the following ideal conditions:</p>
+<ul>
+<li>It lies inside or intersects the Coverage</li>
+<li>Surface visibility is 100%</li>
+<li>The surveyor is highly skilled</li>
+</ul>
+<p>The default is 1.0, which indicates that when visibility and surveyor skill allow, the feature will always be recorded.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="surveysim.feature.Feature.name">
+<code class="descname">name</code><a class="headerlink" href="#surveysim.feature.Feature.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unique name for the feature</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="surveysim.simulation.SimSession.session">
-<code class="descname">session</code><a class="headerlink" href="#surveysim.simulation.SimSession.session" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dt id="surveysim.feature.Feature.layer_name">
+<code class="descname">layer_name</code><a class="headerlink" href="#surveysim.feature.Feature.layer_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of parent layer</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">sqlalchemy Session</td>
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="surveysim.feature.Feature.shape">
+<code class="descname">shape</code><a class="headerlink" href="#surveysim.feature.Feature.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Geographic specification</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">Union[Point, LineString, Polygon]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="surveysim.feature.Feature.time_penalty">
+<code class="descname">time_penalty</code><a class="headerlink" href="#surveysim.feature.Feature.time_penalty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum amount of time it takes to record a feature</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">Union[float, rv_frozen]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="surveysim.feature.Feature.ideal_obs_rate">
+<code class="descname">ideal_obs_rate</code><a class="headerlink" href="#surveysim.feature.Feature.ideal_obs_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ideal observation rate: the frequency with which an artifact or feature will be recorded, assuming the following ideal conditions:</p>
+<ul class="simple">
+<li>It lies inside or intersects the Coverage</li>
+<li>Surface visibility is 100%</li>
+<li>The surveyor is highly skilled</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">Union[float, rv_frozen]</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="method">
-<dt id="surveysim.simulation.SimSession.remove_from_db">
-<code class="descname">remove_from_db</code><span class="sig-paren">(</span><em>block</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.simulation.SimSession.remove_from_db" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="surveysim.simulation.SimSession.stage">
-<code class="descname">stage</code><span class="sig-paren">(</span><em>block</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.simulation.SimSession.stage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a building block to the list of objects to save to the database</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="surveysim.simulation.SimSession.unstage">
-<code class="descname">unstage</code><span class="sig-paren">(</span><em>block</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.simulation.SimSession.unstage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove a building block</p>
+<dt id="surveysim.feature.Feature.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#surveysim.feature.Feature.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create dictionary from attributes to allow easy DataFrame creation by <cite>Layer</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary containing pairs of class attributes and their values</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
 
 </div>
-<div class="section" id="module-surveysim.survey">
-<span id="surveysim-survey"></span><h2>surveysim.survey<a class="headerlink" href="#module-surveysim.survey" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-surveysim.coverage">
+<span id="surveysim-coverage"></span><h2>surveysim.coverage<a class="headerlink" href="#module-surveysim.coverage" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="surveysim.survey.Survey">
-<em class="property">class </em><code class="descclassname">surveysim.survey.</code><code class="descname">Survey</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.survey.Survey" title="Permalink to this definition">¶</a></dt>
+<dt id="surveysim.coverage.Coverage">
+<em class="property">class </em><code class="descclassname">surveysim.coverage.</code><code class="descname">Coverage</code><span class="sig-paren">(</span><em>name</em>, <em>area</em>, <em>survey_name</em>, <em>surveyunit_list</em>, <em>orientation</em>, <em>spacing</em>, <em>sweep_width=None</em>, <em>radius=None</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.coverage.Coverage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
-<p>Unique index for a set of <cite>Area</cite>, <cite>Assemblage</cite>, <cite>Coverage</cite>, and <cite>Team</cite></p>
+<p>A collection of <cite>SurveyUnit</cite> objects</p>
+<p>The <cite>Coverage</cite> class is mostly useful as a way to create groups of similar survey units.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Unique name for the Coverage</li>
+<li><strong>area</strong> (<a class="reference internal" href="#surveysim.area.Area" title="surveysim.area.Area"><em>Area</em></a>) – Containing area</li>
+<li><strong>survey_name</strong> (<em>str</em>) – Name of the survey</li>
+<li><strong>surveyunit_list</strong> (<em>List</em><em>[</em><a class="reference internal" href="#surveysim.surveyunit.SurveyUnit" title="surveysim.surveyunit.SurveyUnit"><em>SurveyUnit</em></a><em>]</em>) – List of survey units that make up the coverage</li>
+<li><strong>orientation</strong> (<em>float</em>) – Angle of the predominant axis of the survey units</li>
+<li><strong>spacing</strong> (<em>float</em>) – Distance between survey units</li>
+<li><strong>sweep_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Buffer distance around transects (the default is None, which is only updated if the survey units are transects)</li>
+<li><strong>radius</strong> (<em>float</em><em>, </em><em>optional</em>) – Buffer distance for radial survey units (the default is None, which is only update if the survey units are radial)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="attribute">
-<dt id="surveysim.survey.Survey.name">
-<code class="descname">name</code><a class="headerlink" href="#surveysim.survey.Survey.name" title="Permalink to this definition">¶</a></dt>
+<dt id="surveysim.coverage.Coverage.name">
+<code class="descname">name</code><a class="headerlink" href="#surveysim.coverage.Coverage.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unique name for the coverage</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="surveysim.coverage.Coverage.survey_name">
+<code class="descname">survey_name</code><a class="headerlink" href="#surveysim.coverage.Coverage.survey_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of the survey</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1462,56 +1122,9 @@
 </dd></dl>
 
 <dl class="attribute">
-<dt id="surveysim.survey.Survey.area">
-<code class="descname">area</code><a class="headerlink" href="#surveysim.survey.Survey.area" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.survey.Survey.assemblage">
-<code class="descname">assemblage</code><a class="headerlink" href="#surveysim.survey.Survey.assemblage" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.survey.Survey.coverage">
-<code class="descname">coverage</code><a class="headerlink" href="#surveysim.survey.Survey.coverage" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.survey.Survey.id">
-<code class="descname">id</code><a class="headerlink" href="#surveysim.survey.Survey.id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">name</code></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="surveysim.survey.Survey.plot">
-<code class="descname">plot</code><span class="sig-paren">(</span><em>area=None</em>, <em>assemblage=None</em>, <em>layers=None</em>, <em>features=None</em>, <em>coverage=None</em>, <em>surveyunits=None</em>, <em>team=None</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.survey.Survey.plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>method to create plot matrix for all building blocks</p>
-<p>Useful for quick inspections of the survey elements</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.survey.Survey.team">
-<code class="descname">team</code><a class="headerlink" href="#surveysim.survey.Survey.team" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-surveysim.surveyor">
-<span id="surveysim-surveyor"></span><h2>surveysim.surveyor<a class="headerlink" href="#module-surveysim.surveyor" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="surveysim.surveyor.Surveyor">
-<em class="property">class </em><code class="descclassname">surveysim.surveyor.</code><code class="descname">Surveyor</code><span class="sig-paren">(</span><em>name</em>, <em>team_name</em>, <em>surveyor_type</em>, <em>skill=1.0</em>, <em>speed_penalty=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.surveyor.Surveyor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
-<p>Represents an individual who will participate in the survey.</p>
-<dl class="attribute">
-<dt id="surveysim.surveyor.Surveyor.name">
-<code class="descname">name</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Unique name for the surveyor</p>
+<dt id="surveysim.coverage.Coverage.area_name">
+<code class="descname">area_name</code><a class="headerlink" href="#surveysim.coverage.Coverage.area_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the containing area</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1523,107 +1136,218 @@
 </dd></dl>
 
 <dl class="attribute">
-<dt id="surveysim.surveyor.Surveyor.team_name">
-<code class="descname">team_name</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.team_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Name of the parent team</p>
+<dt id="surveysim.coverage.Coverage.surveyunit_list">
+<code class="descname">surveyunit_list</code><a class="headerlink" href="#surveysim.coverage.Coverage.surveyunit_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of survey units that make up the coverage</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">List[<a class="reference internal" href="#surveysim.surveyunit.SurveyUnit" title="surveysim.surveyunit.SurveyUnit">SurveyUnit</a>]</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="surveysim.surveyor.Surveyor.surveyor_type">
-<code class="descname">surveyor_type</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.surveyor_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>A helpful way of grouping surveyors with like traits (e.g., ‘student’ or ‘expert’)</p>
+<dt id="surveysim.coverage.Coverage.orientation">
+<code class="descname">orientation</code><a class="headerlink" href="#surveysim.coverage.Coverage.orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angle of the predominant axis of the survey units</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="surveysim.surveyor.Surveyor.skill">
-<code class="descname">skill</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.skill" title="Permalink to this definition">¶</a></dt>
-<dd><p>Assuming perfect visibility and ideal observation rate, what is the expected probability that this person would identify any feature that crossed their survey unit.</p>
+<dt id="surveysim.coverage.Coverage.spacing">
+<code class="descname">spacing</code><a class="headerlink" href="#surveysim.coverage.Coverage.spacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Distance between survey units</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">Union[float, rv_frozen]</td>
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="surveysim.surveyor.Surveyor.speed_penalty">
-<code class="descname">speed_penalty</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.speed_penalty" title="Permalink to this definition">¶</a></dt>
-<dd><p>Time factor added to each of this surveyor’s survey units.</p>
+<dt id="surveysim.coverage.Coverage.sweep_width">
+<code class="descname">sweep_width</code><a class="headerlink" href="#surveysim.coverage.Coverage.sweep_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buffer distance around transects</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">Union[float, rv_frozen]</td>
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="surveysim.surveyor.Surveyor.id">
-<code class="descname">id</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">name</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">skill</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">speed_penalty</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">surveyor_type</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.surveyor.Surveyor.team">
-<code class="descname">team</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.team" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">team_name</code></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="surveysim.surveyor.Surveyor.to_dict">
-<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#surveysim.surveyor.Surveyor.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create dictionary from attributes to allow easy DataFrame creation by <cite>Team</cite>.</p>
+<dt id="surveysim.coverage.Coverage.radius">
+<code class="descname">radius</code><a class="headerlink" href="#surveysim.coverage.Coverage.radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buffer distance for radial survey units</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary containing pairs of class attributes and their values</td>
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="surveysim.coverage.Coverage.df">
+<code class="descname">df</code><a class="headerlink" href="#surveysim.coverage.Coverage.df" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>GeoDataFrame</cite> with a row for each survey unit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">geopandas GeoDataFrame</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="surveysim.coverage.Coverage.from_GeoDataFrame">
+<em class="property">classmethod </em><code class="descname">from_GeoDataFrame</code><span class="sig-paren">(</span><em>gdf: geopandas.geodataframe.GeoDataFrame</em>, <em>name: str</em>, <em>area: surveysim.area.Area</em>, <em>survey_name: str</em>, <em>surveyunit_type: str</em>, <em>spacing: float</em>, <em>orient_axis: str = 'long'</em>, <em>min_time_per_unit: Union[float</em>, <em>scipy.stats._distn_infrastructure.rv_frozen] = 0.0</em><span class="sig-paren">)</span> &#x2192; surveysim.coverage.Coverage<a class="headerlink" href="#surveysim.coverage.Coverage.from_GeoDataFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <cite>Coverage</cite> instance from a geopandas <cite>GeoDataFrame</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>gdf</strong> (<em>geopandas GeoDataFrame</em>) – <cite>GeoDataFrame</cite> where each row is a survey unit</li>
+<li><strong>name</strong> (<em>str</em>) – Unique name for the Coverage</li>
+<li><strong>area</strong> (<a class="reference internal" href="#surveysim.area.Area" title="surveysim.area.Area"><em>Area</em></a>) – Containing area</li>
+<li><strong>survey_name</strong> (<em>str</em>) – Name of the survey</li>
+<li><strong>surveyunit_type</strong> (<em>{'transect'</em><em>, </em><em>'radial'}</em>) – Type of units to create</li>
+<li><strong>spacing</strong> (<em>float</em>) – Distance between survey units</li>
+<li><strong>orient_axis</strong> (<em>{'long'</em><em>, </em><em>'short'}</em><em>, </em><em>optional</em>) – Axis of the area along which to orient the survey units (the default is ‘long’, which creates rows parallel to the longest axis of the area’s minimum rotated rectangle)</li>
+<li><strong>min_time_per_unit</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – <p>Minimum amount of time required to complete one “unit” of survey, given no surveyor speed penalty and no time penalty for recording features. The default is 0.0.</p>
+<p>Because transects can differ in length, transect coverages should specify this term as time per one unit of distance (e.g., seconds per meter).</p>
+<p>For radial survey units, this term should be specified more simply as time per one survey unit.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#surveysim.coverage.Coverage" title="surveysim.coverage.Coverage">Coverage</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="surveysim.coverage.Coverage.from_radials">
+<em class="property">classmethod </em><code class="descname">from_radials</code><span class="sig-paren">(</span><em>name: str</em>, <em>area: surveysim.area.Area</em>, <em>survey_name: str</em>, <em>spacing: float = 10.0</em>, <em>radius: float = 1.78</em>, <em>orientation: float = 0.0</em>, <em>optimize_orient_by: str = None</em>, <em>orient_increment: float = 5.0</em>, <em>orient_axis: str = 'long'</em>, <em>min_time_per_unit: Union[float</em>, <em>scipy.stats._distn_infrastructure.rv_frozen] = 0.0</em><span class="sig-paren">)</span> &#x2192; surveysim.coverage.Coverage<a class="headerlink" href="#surveysim.coverage.Coverage.from_radials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <cite>Coverage</cite> instance of radial units.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>str</em>) – Unique name for the Coverage</li>
+<li><strong>area</strong> (<a class="reference internal" href="#surveysim.area.Area" title="surveysim.area.Area"><em>Area</em></a>) – Containing area</li>
+<li><strong>survey_name</strong> (<em>str</em>) – Name of the survey</li>
+<li><strong>spacing</strong> (<em>float</em><em>, </em><em>optional</em>) – Distance between survey units (the default is 10.0)</li>
+<li><strong>radius</strong> (<em>float</em><em>, </em><em>optional</em>) – Buffer distance for radial survey units (the default is 1.78, which leads to radial units of roughly 10 square units of area)</li>
+<li><strong>orientation</strong> (<em>float</em><em>, </em><em>optional</em>) – Angle of the predominant axis of the survey units (the default is 0.0)</li>
+<li><strong>optimize_orient_by</strong> (<em>{'area_coverage'</em><em>, </em><em>'area_orient'}</em><em>, </em><em>optional</em>) – Metric to optimize in determining the orientation of survey units. ‘area_coverage’ chooses the orientation that maximizes the area covered by the survey units. ‘area_orient’ chooses the orientation that best parallels the <cite>orient_axis</cite> of the area. The default is None, in which case the <cite>orientation</cite> parameter is used directly.</li>
+<li><strong>orient_increment</strong> (<em>float</em><em>, </em><em>optional</em>) – Step size (in degrees) to use when testing different orientations. (the default is 5.0)</li>
+<li><strong>orient_axis</strong> (<em>{'long'</em><em>, </em><em>'short'}</em><em>, </em><em>optional</em>) – Axis of the area along which to orient the survey units (the default is ‘long’, which creates rows parallel to the longest axis of the area’s minimum rotated rectangle)</li>
+<li><strong>min_time_per_unit</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em>) – <p>Minimum amount of time required to complete one “unit” of survey, given no surveyor speed penalty and no time penalty for recording features. The default is 0.0.</p>
+<p>For radial survey units, this term should be specified more simply as time per one survey unit.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#surveysim.coverage.Coverage" title="surveysim.coverage.Coverage">Coverage</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="surveysim.coverage.Coverage.from_shapefile">
+<em class="property">classmethod </em><code class="descname">from_shapefile</code><span class="sig-paren">(</span><em>path: str</em>, <em>name: str</em>, <em>area: surveysim.area.Area</em>, <em>survey_name: str</em>, <em>surveyunit_type: str</em>, <em>spacing: float</em>, <em>orient_axis: str = 'long'</em>, <em>min_time_per_unit: Union[float</em>, <em>scipy.stats._distn_infrastructure.rv_frozen] = 0.0</em><span class="sig-paren">)</span> &#x2192; surveysim.coverage.Coverage<a class="headerlink" href="#surveysim.coverage.Coverage.from_shapefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <cite>Coverage</cite> instance from a shapefile.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>path</strong> (<em>str</em>) – Filepath to the shapefile</li>
+<li><strong>name</strong> (<em>str</em>) – Unique name for the Coverage</li>
+<li><strong>area</strong> (<a class="reference internal" href="#surveysim.area.Area" title="surveysim.area.Area"><em>Area</em></a>) – Containing area</li>
+<li><strong>survey_name</strong> (<em>str</em>) – Name of the survey</li>
+<li><strong>surveyunit_type</strong> (<em>{'transect'</em><em>, </em><em>'radial'}</em>) – Type of units to create</li>
+<li><strong>spacing</strong> (<em>float</em>) – Distance between survey units</li>
+<li><strong>orient_axis</strong> (<em>{'long'</em><em>, </em><em>'short'}</em><em>, </em><em>optional</em>) – Axis of the area along which to orient the survey units (the default is ‘long’, which creates rows parallel to the longest axis of the area’s minimum rotated rectangle)</li>
+<li><strong>min_time_per_unit</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – <p>Minimum amount of time required to complete one “unit” of survey, given no surveyor speed penalty and no time penalty for recording features. The default is 0.0.</p>
+<p>Because transects can differ in length, transect coverages should specify this term as time per one unit of distance (e.g., seconds per meter).</p>
+<p>For radial survey units, this term should be specified more simply as time per one survey unit.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#surveysim.coverage.Coverage" title="surveysim.coverage.Coverage">Coverage</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="surveysim.coverage.Coverage.from_transects">
+<em class="property">classmethod </em><code class="descname">from_transects</code><span class="sig-paren">(</span><em>name: str</em>, <em>area: surveysim.area.Area</em>, <em>survey_name: str</em>, <em>spacing: float = 10.0</em>, <em>sweep_width: float = 2.0</em>, <em>orientation: float = 0.0</em>, <em>optimize_orient_by: str = None</em>, <em>orient_increment: float = 5.0</em>, <em>orient_axis: str = 'long'</em>, <em>min_time_per_unit: Union[float</em>, <em>scipy.stats._distn_infrastructure.rv_frozen] = 0.0</em><span class="sig-paren">)</span> &#x2192; surveysim.coverage.Coverage<a class="headerlink" href="#surveysim.coverage.Coverage.from_transects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <cite>Coverage</cite> instance of transects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>str</em>) – Unique name for the Coverage</li>
+<li><strong>area</strong> (<a class="reference internal" href="#surveysim.area.Area" title="surveysim.area.Area"><em>Area</em></a>) – Containing area</li>
+<li><strong>survey_name</strong> (<em>str</em>) – Name of the survey</li>
+<li><strong>spacing</strong> (<em>float</em><em>, </em><em>optional</em>) – Distance between survey units (the default is 10.0)</li>
+<li><strong>sweep_width</strong> (<em>float</em><em>, </em><em>optional</em>) – Buffer distance around transects (the default is 2.0)</li>
+<li><strong>orientation</strong> (<em>float</em><em>, </em><em>optional</em>) – Angle of the predominant axis of the survey units (the default is 0.0)</li>
+<li><strong>optimize_orient_by</strong> (<em>{'area_coverage'</em><em>, </em><em>'area_orient'}</em><em>, </em><em>optional</em>) – Metric to optimize in determining the orientation of survey units. ‘area_coverage’ chooses the orientation that maximizes the area covered by the survey units. ‘area_orient’ chooses the orientation that best parallels the <cite>orient_axis</cite> of the area. The default is None, in which case the <cite>orientation</cite> parameter is used directly.</li>
+<li><strong>orient_increment</strong> (<em>float</em><em>, </em><em>optional</em>) – Step size (in degrees) to use when testing different orientations. (the default is 5.0)</li>
+<li><strong>orient_axis</strong> (<em>{'long'</em><em>, </em><em>'short'}</em><em>, </em><em>optional</em>) – Axis of the area along which to orient the survey units (the default is ‘long’, which creates rows parallel to the longest axis of the area’s minimum rotated rectangle)</li>
+<li><strong>min_time_per_unit</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em>) – <p>Minimum amount of time required to complete one “unit” of survey, given no surveyor speed penalty and no time penalty for recording features. The default is 0.0.</p>
+<p>Because transects can differ in length, transect coverages should specify this term as time per one unit of distance (e.g., seconds per meter).</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#surveysim.coverage.Coverage" title="surveysim.coverage.Coverage">Coverage</a></p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1640,6 +1364,26 @@
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
 <p>Represents a spatial unit of survey like a transect or radial unit.</p>
 <p>This class is not normally used directly. It is usually more efficient to use the constructor methods of the <cite>Coverage</cite> class to create many <cite>SurveyUnit</cite> objects at once.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Unique name for the survey unit</li>
+<li><strong>coverage_name</strong> (<em>str</em>) – Name of the parent coverage</li>
+<li><strong>shape</strong> (<em>Polygon</em>) – Geographic specification</li>
+<li><strong>surveyunit_type</strong> (<em>{'transect'</em><em>, </em><em>'radial'}</em>) – Type of the unit</li>
+<li><strong>length</strong> (<em>float</em><em>, </em><em>optional</em>) – Length of transect units (the default is None)</li>
+<li><strong>radius</strong> (<em>float</em><em>, </em><em>optional</em>) – Radius of radial units (the default is None)</li>
+<li><strong>min_time_per_unit</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – <p>Minimum amount of time required to complete one “unit” of survey, given no surveyor speed penalty and no time penalty for recording features. The default is 0.0.</p>
+<p>Because transects can differ in length, transect coverages should specify this term as time per one unit of distance (e.g., seconds per meter).</p>
+<p>For radial survey units, this term should be specified more simply as time per one survey unit.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="attribute">
 <dt id="surveysim.surveyunit.SurveyUnit.name">
 <code class="descname">name</code><a class="headerlink" href="#surveysim.surveyunit.SurveyUnit.name" title="Permalink to this definition">¶</a></dt>
@@ -1754,46 +1498,6 @@
 </table>
 </dd></dl>
 
-<dl class="attribute">
-<dt id="surveysim.surveyunit.SurveyUnit.base_time">
-<code class="descname">base_time</code><a class="headerlink" href="#surveysim.surveyunit.SurveyUnit.base_time" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.surveyunit.SurveyUnit.coverage">
-<code class="descname">coverage</code><a class="headerlink" href="#surveysim.surveyunit.SurveyUnit.coverage" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">coverage_name</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="surveysim.surveyunit.SurveyUnit.id">
-<code class="descname">id</code><a class="headerlink" href="#surveysim.surveyunit.SurveyUnit.id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">min_time_per_unit</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">name</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">shape</code></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="descname">surveyunit_type</code></dt>
-<dd></dd></dl>
-
 <dl class="method">
 <dt id="surveysim.surveyunit.SurveyUnit.to_dict">
 <code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#surveysim.surveyunit.SurveyUnit.to_dict" title="Permalink to this definition">¶</a></dt>
@@ -1820,6 +1524,19 @@
 <em class="property">class </em><code class="descclassname">surveysim.team.</code><code class="descname">Team</code><span class="sig-paren">(</span><em>name</em>, <em>survey_name</em>, <em>surveyor_list</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.team.Team" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
 <p>A collection of <cite>Surveyor</cite> objects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Unique name for the team</li>
+<li><strong>survey_name</strong> (<em>str</em>) – Name of the survey</li>
+<li><strong>surveyor_list</strong> (<em>List</em><em>[</em><a class="reference internal" href="#surveysim.surveyor.Surveyor" title="surveysim.surveyor.Surveyor"><em>Surveyor</em></a><em>]</em>) – List of surveyors that make up the team</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="attribute">
 <dt id="surveysim.team.Team.name">
 <code class="descname">name</code><a class="headerlink" href="#surveysim.team.Team.name" title="Permalink to this definition">¶</a></dt>
@@ -1876,35 +1593,116 @@
 </table>
 </dd></dl>
 
+</dd></dl>
+
+</div>
+<div class="section" id="module-surveysim.surveyor">
+<span id="surveysim-surveyor"></span><h2>surveysim.surveyor<a class="headerlink" href="#module-surveysim.surveyor" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="surveysim.surveyor.Surveyor">
+<em class="property">class </em><code class="descclassname">surveysim.surveyor.</code><code class="descname">Surveyor</code><span class="sig-paren">(</span><em>name</em>, <em>team_name</em>, <em>surveyor_type</em>, <em>skill=1.0</em>, <em>speed_penalty=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#surveysim.surveyor.Surveyor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
+<p>Represents an individual who will participate in the survey.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – Unique name for the surveyor</li>
+<li><strong>team_name</strong> (<em>str</em>) – Name of the parent team</li>
+<li><strong>surveyor_type</strong> (<em>str</em>) – A helpful way of grouping surveyors with like traits (e.g., ‘student’ or ‘expert’)</li>
+<li><strong>skill</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – Assuming perfect visibility and ideal observation rate, what is the expected probability that this person would identify any feature that crossed their survey unit. The default is 1.0, which would mean this surveyor recorded everything they encountered (after controlling for other factors).</li>
+<li><strong>speed_penalty</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>rv_frozen</em><em>]</em><em>, </em><em>optional</em>) – Time factor added to each of this surveyor’s survey units. The default is 0.0, which applies no penalty. Penalties should range between 0.0 and 1.0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="attribute">
-<dt id="surveysim.team.Team.id">
-<code class="descname">id</code><a class="headerlink" href="#surveysim.team.Team.id" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="surveysim.surveyor.Surveyor.name">
+<code class="descname">name</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unique name for the surveyor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
-<dt>
-<code class="descname">name</code></dt>
-<dd></dd></dl>
+<dt id="surveysim.surveyor.Surveyor.team_name">
+<code class="descname">team_name</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.team_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the parent team</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
-<dt id="surveysim.team.Team.survey">
-<code class="descname">survey</code><a class="headerlink" href="#surveysim.team.Team.survey" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="surveysim.surveyor.Surveyor.surveyor_type">
+<code class="descname">surveyor_type</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.surveyor_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>A helpful way of grouping surveyors with like traits (e.g., ‘student’ or ‘expert’)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
-<dt>
-<code class="descname">survey_name</code></dt>
-<dd></dd></dl>
+<dt id="surveysim.surveyor.Surveyor.skill">
+<code class="descname">skill</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.skill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assuming perfect visibility and ideal observation rate, what is the expected probability that this person would identify any feature that crossed their survey unit.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">Union[float, rv_frozen]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="attribute">
-<dt>
-<code class="descname">surveyor_list</code></dt>
-<dd></dd></dl>
+<dt id="surveysim.surveyor.Surveyor.speed_penalty">
+<code class="descname">speed_penalty</code><a class="headerlink" href="#surveysim.surveyor.Surveyor.speed_penalty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time factor added to each of this surveyor’s survey units.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">Union[float, rv_frozen]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
-<dl class="attribute">
-<dt id="surveysim.team.Team.surveyors">
-<code class="descname">surveyors</code><a class="headerlink" href="#surveysim.team.Team.surveyors" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dl class="method">
+<dt id="surveysim.surveyor.Surveyor.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#surveysim.surveyor.Surveyor.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create dictionary from attributes to allow easy DataFrame creation by <cite>Team</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary containing pairs of class attributes and their values</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </dd></dl>
 
