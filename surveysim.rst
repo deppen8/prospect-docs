@@ -1,102 +1,80 @@
-surveysim package
-=================
+Modules
+=======
 
-Submodules
-----------
-
-surveysim.area module
----------------------
-
-.. automodule:: surveysim.area
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-surveysim.assemblage module
----------------------------
-
-.. automodule:: surveysim.assemblage
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-surveysim.coverage module
--------------------------
-
-.. automodule:: surveysim.coverage
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-surveysim.feature module
-------------------------
-
-.. automodule:: surveysim.feature
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-surveysim.layer module
-----------------------
-
-.. automodule:: surveysim.layer
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-surveysim.simulation module
+surveysim.simulation
 ---------------------------
 
 .. automodule:: surveysim.simulation
     :members:
-    :undoc-members:
     :show-inheritance:
 
-surveysim.survey module
+surveysim.survey
 -----------------------
 
 .. automodule:: surveysim.survey
     :members:
-    :undoc-members:
     :show-inheritance:
 
-surveysim.surveyor module
+surveysim.area
+---------------------
+
+.. automodule:: surveysim.area
+    :members:
+    :show-inheritance:
+
+surveysim.assemblage
+---------------------------
+
+.. automodule:: surveysim.assemblage
+    :members:
+    :show-inheritance:
+
+surveysim.layer
+----------------------
+
+.. automodule:: surveysim.layer
+    :members:
+    :show-inheritance:
+
+surveysim.feature
+------------------------
+
+.. automodule:: surveysim.feature
+    :members:
+    :show-inheritance:
+
+surveysim.coverage
 -------------------------
 
-.. automodule:: surveysim.surveyor
+.. automodule:: surveysim.coverage
     :members:
-    :undoc-members:
     :show-inheritance:
 
-surveysim.surveyunit module
+surveysim.surveyunit
 ---------------------------
 
 .. automodule:: surveysim.surveyunit
     :members:
-    :undoc-members:
     :show-inheritance:
 
-surveysim.team module
+
+surveysim.team
 ---------------------
 
 .. automodule:: surveysim.team
     :members:
-    :undoc-members:
     :show-inheritance:
 
-surveysim.utils module
+surveysim.surveyor
+-------------------------
+
+.. automodule:: surveysim.surveyor
+    :members:
+    :show-inheritance:
+
+surveysim.utils
 ----------------------
 
 .. automodule:: surveysim.utils
     :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-Module contents
----------------
-
-.. automodule:: surveysim
-    :members:
-    :undoc-members:
     :show-inheritance:
