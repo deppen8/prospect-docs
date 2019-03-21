@@ -6,7 +6,6 @@ surveysim.area
 
 .. automodule:: surveysim.area
     :members:
-    :undoc-members:
     :show-inheritance:
 
 surveysim.assemblage
